@@ -16,6 +16,7 @@ const io_address = `${location.protocol}//${location.hostname}:8090`;
 const socket = io(io_address);
 
 socket.on('state', state => {
+	console.log('socket.on state: ' + JSON.stringify(state));
 	store.dispatch(setState(state));
 });
 

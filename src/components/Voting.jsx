@@ -8,7 +8,9 @@ import * as actionCreators from '../action_creators';
 
 export const Voting = React.createClass({
 	mixins: [PureRenderMixin],
+
 	render: function() {
+		console.log('component Voting winner: ' + JSON.toString(this.props.winner));
 		return <div>
 			{this.props.winner ?
 				<Winner ref="winner" winner = {this.props.winner}/> : <Vote {...this.props}/>
@@ -18,8 +20,9 @@ export const Voting = React.createClass({
 });
 
 function mapStateToProps(state) {
+	console.log('voting props: ' + JSON.stringify(state));
 	return {
-		pair: state.getIn(['vote', 'pair']),
+		pair: state.get('pair'),
 		hasVoted: state.get('hasVoted'),
 		winner: state.get('winner')
 	}

@@ -13,6 +13,7 @@ export default React.createClass({
 		return entry === this.props.hasVoted;
 	},
 	render: function() {
+		console.log('component vote pair: ' + JSON.toString(this.props.pair));
 		return <div className="voting">
 			{this.getPair().map(entry =>
 				<button key={entry}

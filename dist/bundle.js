@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "86b4fb3cf94a9c19890e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fd0a143e045997ba28e0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8227,6 +8227,7 @@
 	var socket = (0, _socket2.default)(io_address);
 
 	socket.on('state', function (state) {
+		console.log('socket.on state: ' + JSON.stringify(state));
 		store.dispatch((0, _action_creators.setState)(state));
 	});
 
@@ -41754,6 +41755,7 @@
 		var state = arguments.length <= 0 || arguments[0] === undefined ? (0, _immutable.Map)() : arguments[0];
 		var action = arguments[1];
 
+		console.log('reducer action type: ' + action.type);
 		switch (action.type) {
 			case 'SET_STATE':
 				return setState(state, action.state);
@@ -41764,6 +41766,7 @@
 	var _immutable = __webpack_require__(380);
 
 	function setState(state, newState) {
+		console.log('newState: ' + JSON.stringify(newState));
 		return state.merge(newState);
 	}
 
@@ -47095,6 +47098,7 @@
 		displayName: 'Voting',
 
 		mixins: [_reactAddonsPureRenderMixin2.default],
+
 		render: function render() {
 			return _react2.default.createElement(
 				'div',
@@ -47105,6 +47109,7 @@
 	});
 
 	function mapStateToProps(state) {
+		console.log('voting props: ' + JSON.stringify(state));
 		return {
 			pair: state.getIn(['vote', 'pair']),
 			hasVoted: state.get('hasVoted'),
