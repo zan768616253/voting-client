@@ -39,9 +39,9 @@ export const Results = React.createClass({
 });
 
 function mapStateToProps(state) {
+	console.log('results props: ' + JSON.stringify(state));
 	return {
-		pair: state.getIn(['vote', 'pair']),
-		tally: state.getIn(['vote', 'tally']),
+		pair: state.get('pair'),
 		winner: state.get('winner')
 	}
 }

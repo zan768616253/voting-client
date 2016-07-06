@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fd0a143e045997ba28e0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3475fa4af41c5e243bfe"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -46914,9 +46914,9 @@
 	});
 
 	function mapStateToProps(state) {
+		console.log('results props: ' + JSON.stringify(state));
 		return {
-			pair: state.getIn(['vote', 'pair']),
-			tally: state.getIn(['vote', 'tally']),
+			pair: state.get('pair'),
 			winner: state.get('winner')
 		};
 	}
@@ -47103,17 +47103,16 @@
 			return _react2.default.createElement(
 				'div',
 				null,
-				this.props.winner ? _react2.default.createElement(_Winner2.default, { ref: 'winner', winner: this.props.winner }) : _react2.default.createElement(_Vote2.default, this.props)
+				this.props.winner ? _react2.default.createElement(_Winner2.default, { ref: 'winner', winner: this.props.winner }) : _react2.default.createElement(_Vote2.default, { pair: this.props.pair, vote: this.props.vote })
 			);
 		}
 	});
 
 	function mapStateToProps(state) {
-		console.log('voting props: ' + JSON.stringify(state));
+		console.log('voting props: ' + JSON.stringify(state.toJS()));
 		return {
-			pair: state.getIn(['vote', 'pair']),
-			hasVoted: state.get('hasVoted'),
-			winner: state.get('winner')
+			pair: state.get('pair') ? state.get('pair').toJS() : [],
+			winner: state.get('winner') ? state.get('winner').toJS() : ''
 		};
 	}
 
@@ -47149,7 +47148,8 @@
 
 		mixins: [_reactAddonsPureRenderMixin2.default],
 		getPair: function getPair() {
-			return this.props.pair || [];
+			var pair = this.props.pair ? this.props.pair.toJS() : [];
+			return pair;
 		},
 		isDisabled: function isDisabled() {
 			return !!this.props.hasVoted;

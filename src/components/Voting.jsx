@@ -10,21 +10,19 @@ export const Voting = React.createClass({
 	mixins: [PureRenderMixin],
 
 	render: function() {
-		console.log('component Voting winner: ' + JSON.toString(this.props.winner));
 		return <div>
 			{this.props.winner ?
-				<Winner ref="winner" winner = {this.props.winner}/> : <Vote {...this.props}/>
+				<Winner ref="winner" winner = {this.props.winner}/> : <Vote pair={this.props.pair} vote={this.props.vote}/>
 			}
 		</div>;
 	}
 });
 
 function mapStateToProps(state) {
-	console.log('voting props: ' + JSON.stringify(state));
+	console.log('voting props: ' + JSON.stringify(state.toJS()));
 	return {
-		pair: state.get('pair'),
-		hasVoted: state.get('hasVoted'),
-		winner: state.get('winner')
+		pair: state.get('pair') ? state.get('pair').toJS() : [],
+		winner: state.get('winner') ? state.get('winner').toJS() : ''
 	}
 }
 
