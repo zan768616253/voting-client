@@ -20,6 +20,7 @@ export const Voting = React.createClass({
 
 function mapStateToProps(state) {
 	console.log('voting props: ' + JSON.stringify(state.toJS()));
+
 	return {
 		pair: state.get('pair') ? state.get('pair').toJS() : [],
 		winner: state.get('winner') ? state.get('winner').toJS() : ''

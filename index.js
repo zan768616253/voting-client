@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 
 let app = express();
-let port = 8880;
+let port = 3000;
 
 app.engine('ejs', require('ejs').__express);
 app.set('view engine', 'ejs');

@@ -23,16 +23,17 @@ module.exports = {
 		extensions: ['', '.js', '.jsx']
 	},
 	output: {
-		path: __dirname + '/dist',
-		publicPath: '/',
+		publicPath: "/",
+		path: __dirname + '/dist/',
 		filename: 'bundle.js'
 	},
 	devServer: {
-		contentBase: './dist',
+		contentBase: "/dist",
 		hot: true
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
 		new ExtractTextPlugin('style.css')
 	],
 	postcss: function () {
