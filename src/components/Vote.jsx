@@ -10,11 +10,12 @@ export default React.createClass({
 	render: function() {
 		return <div className="voting">
 			{this.getPair().map(entry =>
-
-				<button key={entry._id}
-				        onClick = {() => this.props.vote(entry._id)}>
-					<h1>{entry.content}</h1>
-				</button>
+				<div>
+					<div key={entry._id}
+					     onClick = {() => this.props.vote(entry._id)}>
+						<h1>{entry.content}</h1>
+					</div>
+				</div>
 			)}
 		</div>
 	}
