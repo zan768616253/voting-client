@@ -14,7 +14,7 @@ export default React.createClass({
 		return <div className="voting">
 			{this.getPair().map(entry =>
 				<div className="votingItem" >
-					<div className="votingGallery" key={entry._id}
+					<div className="votingGallery photo-frame" key={entry._id}
 					     onClick = {() => this.props.vote(entry._id)}>
 						<img src={entry.content} className={this.imageClass} onLoad={this._onLoad.bind(this)} />
 					</div>

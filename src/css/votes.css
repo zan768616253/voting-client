@@ -1,16 +1,8 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    /*background-color: #673AB7;*/
-    background-color: #673AB7;
-    color: white;
-}
-
 /* Voting Screen */
 
 .voting {
-    height: auto;
+    height: 100%;
     overflow: auto;
-    min-height: 100vh;
     display: flex;
     user-select: none;
     -o-user-select:none;
@@ -26,25 +18,6 @@ body {
     border-width: 0;
 
     cursor: pointer;
-}
-.voting button:first-child {
-    border-bottom: 1px solid white;
-}
-.voting button:active {
-    background-color: white;
-    color: #311B92;
-}
-.voting button.voted {
-    background-color: #311B92;
-}
-.voting button:not(.voted) .label {
-    visibility: hidden;
-}
-.voting button .label {
-    opacity: 0.87;
-}
-.voting button.votedAgainst * {
-    opacity: 0.3;
 }
 
 .voting > .votingItem {
@@ -65,11 +38,11 @@ body {
 }
 
 .voting > .votingItem:first-child {
-    border-right: 1px solid white;
+    border-right: 3px solid darkslateblue;
 }
 
 .voting > .votingItem:active {
-    background-color: white;
+    background-color: darkslateblue;
     color: #311B92;
 }
 
@@ -84,6 +57,7 @@ body {
     position: relative;
     height: auto;
     width: 100%;
+    z-index: 1;
 }
 
 @media only screen and (min-device-width: 500px) {
@@ -181,4 +155,32 @@ body {
     text-align: center;
 
     background-color: #B71C1C;
+}
+
+.photo-frame {
+    border: 5px solid #888888;
+}
+
+.photo-frame:before {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    height: 0px;
+    right: 0;
+    width: 0px;
+    border-color: #888888 transparent transparent;
+    border-style: solid solid solid;
+    border-width: 20px 20px 20px 20px;
+}
+
+.photo-frame:after {
+    border-color: #673AB7 transparent transparent;;
+    border-style: solid solid solid solid;
+    border-width: 20px;
+    bottom: -33px;
+    content: '';
+    height: 0px;
+    right: 0;
+    position: absolute;
+    width: 0px;
 }

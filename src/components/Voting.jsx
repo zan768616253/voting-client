@@ -10,11 +10,13 @@ export const Voting = React.createClass({
 	mixins: [PureRenderMixin],
 
 	render: function() {
-		return <div>
-			{this.props.winner ?
-				<Winner ref="winner" winner = {this.props.winner}/> : <Vote pair={this.props.pair} vote={this.props.vote}/>
-			}
-		</div>;
+		return (
+			<div className='content'>
+				{this.props.winner ?
+					<Winner ref="winner" winner = {this.props.winner}/> : <Vote pair={this.props.pair} vote={this.props.vote}/>
+				}
+			</div>
+		);
 	}
 });
 
