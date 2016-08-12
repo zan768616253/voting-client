@@ -8,19 +8,15 @@ body {
 /* Voting Screen */
 
 .voting {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    height: auto;
+    overflow: auto;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     user-select: none;
     -o-user-select:none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
-    overflow: auto;
 }
 
 .voting button {
@@ -51,30 +47,43 @@ body {
     opacity: 0.3;
 }
 
-.voting > div {
+.voting > .votingItem {
     flex: 1 0 0;
     background-color: #673AB7;
     border-width: 0;
     cursor: pointer;
-    min-width: 300px;
+    min-width: 500px;
     min-height: 300px;
+    position: relative;
+    text-align: center;
 
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
-
 }
 
-.voting > div:first-child {
+.voting > .votingItem:first-child {
     border-right: 1px solid white;
 }
 
-.voting > div:active {
+.voting > .votingItem:active {
     background-color: white;
     color: #311B92;
+}
+
+.voting > .votingItem > .votingGallery {
+    height: auto;
+    width: 50%;
+    position: relative;
+}
+
+.voting > .votingItem > .votingGallery > img {
+    display: block;
+    position: relative;
+    height: auto;
+    width: 100%;
 }
 
 @media only screen and (min-device-width: 500px) {

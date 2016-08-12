@@ -26,9 +26,9 @@ const createStoreWithMiddleware = applyMiddleware(
 
 const store = createStoreWithMiddleware(reducer);
 
-const routes= <Route component={App}>
-	<Route path="/results" component={ResultsContainer} />
-	<Route path='/' component={VotingContainer} />
+const routes= <Route path='/' component={App}>
+	<Route path='results' component={ResultsContainer} />
+	<Route path='votes' component={VotingContainer} />
 </Route>;
 
 ReactDOM.render(
