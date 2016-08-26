@@ -9,10 +9,10 @@ const Signup = React.createClass({
 		return (
 		<Section>
 			<div className='signup-panel'>
-				<div className='signin-panel-left'>
+				<div className='signin-panel-item left'>
 
 				</div>
-				<div className='signin-panel-right'>
+				<div className='signin-panel-item right'>
 
 				</div>
 			</div>
