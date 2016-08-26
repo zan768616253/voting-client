@@ -9,8 +9,9 @@ import App from './components/App.jsx';
 import reducer from './reducer';
 import {setState} from './action_creators';
 import remoteActionMiddleware from './remote_action_middleware';
-import {ResultsContainer} from './components/Results.jsx';
-import {VotingContainer} from './components/Voting.jsx';
+import {ResultsContainer} from './components/result';
+import {VotingContainer} from './components/vote';
+import {SignupContainer} from './components/signup';
 
 const io_address = `${location.protocol}//${location.hostname}:8090`;
 const socket = io(io_address);
@@ -29,6 +30,7 @@ const store = createStoreWithMiddleware(reducer);
 const routes= <Route path='/' component={App}>
 	<Route path='results' component={ResultsContainer} />
 	<Route path='votes' component={VotingContainer} />
+	<Route path='signup' component={SignupContainer} />
 </Route>;
 
 ReactDOM.render(
