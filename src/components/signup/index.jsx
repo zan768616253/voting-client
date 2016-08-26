@@ -3,7 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 
 import Tagline from '../shared/tagline';
-import Signup from './Signup-Component'
+import { Signup } from './Signup-Component'
 
 export const SignupContainer = React.createClass({
 	mixins: [PureRenderMixin],

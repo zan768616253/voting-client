@@ -8,7 +8,10 @@ export default React.createClass({
 			<div>
 				<div className="head-box blur" />
 				<Header />
-				{this.props.children}
+				<section className="content-box">
+					{this.props.children}
+				</section>
+
 			</div>
 		)
 	}

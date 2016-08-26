@@ -2,21 +2,35 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 
-const Signup = React.createClass({
+export const Signup = React.createClass({
 	mixins: [PureRenderMixin],
 
 	render () {
 		return (
-		<Section>
+		<section>
 			<div className='signup-panel'>
-				<div className='signin-panel-item left'>
+				<span className='signin-panel-item left'>
 
-				</div>
+				</span>
 				<div className='signin-panel-item right'>
-
+					<span className='signin-panel-title'>
+						Sign up
+					</span>
+					<div className='signin-panel-label-input signup'>
+						<span>Full Name</span>
+						<input/>
+					</div>
+					<div className='signin-panel-label-input signup'>
+						<span>Email</span>
+						<input/>
+					</div>
+					<div className='signin-panel-label-input signup'>
+						<span>Password</span>
+						<input/>
+					</div>
 				</div>
 			</div>
-		</Section>
+		</section>
 		)
 	}
 })
