@@ -11,7 +11,6 @@ export default React.createClass({
 				<section className="content-box">
 					{this.props.children}
 				</section>
-
 			</div>
 		)
 	}

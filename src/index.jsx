@@ -6,8 +6,8 @@ import {Provider} from 'react-redux';
 import io from 'socket.io-client';
 
 import App from './components/App.jsx';
-import reducer from './reducer';
-import {setState} from './action_creators';
+import reducers from './reducers';
+import {setState} from './actions/action_creators';
 import remoteActionMiddleware from './remote_action_middleware';
 import {ResultsContainer} from './components/result';
 import {VotingContainer} from './components/vote';
@@ -25,7 +25,7 @@ const createStoreWithMiddleware = applyMiddleware(
 	remoteActionMiddleware(socket)
 )(createStore);
 
-const store = createStoreWithMiddleware(reducer);
+const store = createStoreWithMiddleware(reducers);
 
 const routes= <Route path='/' component={App}>
 	<Route path='results' component={ResultsContainer} />

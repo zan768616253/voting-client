@@ -1,0 +1,3 @@
+//action_user
+
+export const USER_CREATE_EMAIL_CHANGE = 'USER_CREATE_EMAIL_CHANGE';

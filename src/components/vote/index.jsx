@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import Winner from '../winner/index.jsx';
 import Vote from './Vote.jsx';
-import * as actionCreators from '../../action_creators';
+import * as actionCreators from '../../actions/action_creators';
 
 export const Voting = React.createClass({
 	mixins: [PureRenderMixin],
@@ -21,11 +21,11 @@ export const Voting = React.createClass({
 });
 
 function mapStateToProps(state) {
-	console.log('voting props: ' + JSON.stringify(state.toJS()));
+	const appReducer = state.appReducer;
 
 	return {
-		pair: state.get('pair') ? state.get('pair').toJS() : [],
-		winner: state.get('winner') ? state.get('winner').toJS() : ''
+		pair: appReducer.handleSetState.get('pair') ? appReducer.handleSetState.get('pair').toJS() : [],
+		winner: appReducer.handleSetState.get('winner') ? appReducer.handleSetState.get('winner').toJS() : ''
 	}
 }
 

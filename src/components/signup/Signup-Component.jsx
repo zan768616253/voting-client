@@ -22,7 +22,7 @@ export const Signup = React.createClass({
 					</div>
 					<div className='signin-panel-label-input signup'>
 						<span>Email</span>
-						<input/>
+						<input type='email' id='USER_CREATE_EMAIL_CHANGE' placeholder='Email' />
 					</div>
 					<div className='signin-panel-label-input signup'>
 						<span>Password</span>
