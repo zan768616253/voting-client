@@ -28,6 +28,11 @@ export const Signup = React.createClass({
 						<span>Password</span>
 						<input/>
 					</div>
+					<div className='signin-panel-label-input signup'>
+						<a className='signin-panel-label-input-button'>
+							SIGNUP
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -27,6 +27,7 @@
     right: 0;
     bottom: 0;
     background-color: lightblue;
+    padding-top: 30px;
 }
 
 .signup-panel .signin-panel-item {
@@ -35,13 +36,15 @@
     height: auto;
     width: 50%;
     box-sizing: border-box;
+    padding-top: 35px;
 }
 
 .signin-panel-item.left {
 }
 
 .signin-panel-item.right {
-    padding: 30px 0 30px 30px;
+    padding: 0 0 30px 30px;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .signin-panel-item .signin-panel-title {
@@ -77,4 +80,18 @@
     color: black;
     width: 150px;
     height: 30px;
+    padding: 0 5px;
+}
+
+.signin-panel-label-input a.signin-panel-label-input-button {
+    position: absolute;
+    height: 35px;
+    width: 55px;
+    right: 30px;
+    border-radius: 3px;
+    background: #96b1cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
