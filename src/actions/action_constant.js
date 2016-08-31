@@ -1,7 +1,6 @@
-//action_user
+// user/action_user
 
 export const USER_CREATE_EMAIL_CHANGE = 'USER_CREATE_EMAIL_CHANGE';
 export const USER_CREATE_NAME_CHANGE = 'USER_CREATE_NAME_CHANGE';
 export const USER_CREATE_PASSWORD_CHANGE = 'USER_CREATE_PASSWORD_CHANGE';
-
 export const USER_CREATE = 'USER_CREATE';

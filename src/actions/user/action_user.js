@@ -9,13 +9,14 @@ export function userCreateValueChange (evt) {
 	}
 }
 
-export function userCreate (email, password) {
+export function userCreate (email, password, name) {
 	return {
 		meta: {remote: true},
 		type: action_constants.USER_CREATE,
 		value: {
 			email: email,
-			password: password
+			password: password,
+			name: name
 		}
 	};
 }

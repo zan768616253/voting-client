@@ -1,4 +1,4 @@
-export function setState(state) {
+export function setVotees(state) {
 	return {
 		type: 'SET_STATE',
 		state

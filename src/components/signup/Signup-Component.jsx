@@ -10,8 +10,12 @@ export const SignUpPanel = React.createClass({
 		const input_error = handleUserSigninInput.get('input_error');
 
 		const handleOnKeyPress = (e) => {
+			const email = handleUserSigninInput.get('email');
+			const password = handleUserSigninInput.get('password');
+			const name = handleUserSigninInput.get('name');
+
 			if ( Object.keys(input_error).length === 0 && e.keyCode === 13 ) {
-				userAction.userCreate.call(undefined, handleUserSigninInput.get('email'), handleUserSigninInput.get('password'))();
+				userAction.userCreate.call(undefined, email, password, name);
 			}
 		}
 
@@ -19,7 +23,6 @@ export const SignUpPanel = React.createClass({
 			<section>
 				<div className='signup-panel'>
 					<span className='signin-panel-item left'>
-
 					</span>
 					<div className='signin-panel-item right'>
 						<span className='signin-panel-title'>

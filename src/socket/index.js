@@ -1,4 +1,4 @@
-import { setState } from '../actions/socket/action_app';
+import { setVotees } from '../actions/socket/action_app';
 
 class SocketHelper {
 	constructor(socket, store) {
@@ -8,9 +8,8 @@ class SocketHelper {
 
 	init() {
 		this.socket
-			.on('state', state => {
-				console.log('socket.on state: ' + JSON.stringify(state));
-				this.store.dispatch(setState(state));
+			.on('votees', votees => {
+				this.store.dispatch(setVotees(votees));
 			})
 	}
 }
