@@ -13,19 +13,18 @@ import {ResultsContainer} from './components/result';
 import {VotingContainer} from './components/vote';
 import {SignupContainer} from './components/signup';
 
+import SocketHelper from './sockets';
+
 const io_address = `${location.protocol}//${location.hostname}:8090`;
 const socket = io(io_address);
-
-socket.on('state', state => {
-	console.log('socket.on state: ' + JSON.stringify(state));
-	store.dispatch(setState(state));
-});
 
 const createStoreWithMiddleware = applyMiddleware(
 	remoteActionMiddleware(socket)
 )(createStore);
-
 const store = createStoreWithMiddleware(reducers);
+
+const socketHelper = new SocketHelper(socket, store);
+socketHelper.init();
 
 const routes= <Route path='/' component={App}>
 	<Route path='results' component={ResultsContainer} />

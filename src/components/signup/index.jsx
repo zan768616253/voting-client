@@ -4,22 +4,19 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 import Tagline from '../shared/tagline';
-import { Signup } from './Signup-Component';
+import { SignUpPanel } from './Signup-Component';
 import * as userActions from '../../actions/action_user.js';
 
-const SigningUp = React.createClass({
+const SignUp = React.createClass({
 	mixins: [PureRenderMixin],
 	render() {
-		const { states } = this.props;
-		const { actions } = this.props;
-		//const actions = {
-		//	userCreateValueChange: this.props.userCreateValueChange
-		//};
+		const { state, actions } = this.props;
+
 		return (
 			<div className="signin-content">
 				<div className='signin'>
 					<Tagline />
-					<Signup states={ states } actions={ actions }/>
+					<SignUpPanel state={ state } actions={ actions }/>
 				</div>
 			</div>
 		)
@@ -29,7 +26,7 @@ const SigningUp = React.createClass({
 function mapStateToProps(state) {
 	const userReducer = state.userReducer;
 	return {
-		states: {
+		state: {
 			userReducer: {
 				handleUserSigninInput: userReducer.handleUserSigninInput
 			}
@@ -41,6 +38,7 @@ function mapDispatchToProps(dispatch) {
 	return {
 		actions: {
 			userAction: {
+				userCreate: bindActionCreators(userActions.userCreate, dispatch),
 				userCreateValueChange: bindActionCreators(userActions.userCreateValueChange, dispatch)
 			}
 		}
@@ -50,4 +48,4 @@ function mapDispatchToProps(dispatch) {
 export const SignupContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(SigningUp);
+)(SignUp);

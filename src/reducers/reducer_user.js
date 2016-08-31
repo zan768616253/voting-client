@@ -19,17 +19,17 @@ function handleUserSigninInput (state = Map({ email: '', name: '', password: '',
 			break;
 		case action_constants.USER_CREATE_NAME_CHANGE:
 			if (value.indexOf('@') > -1 || value.indexOf(',') > -1) {
-				delete error.name;
-			} else {
 				_.assign(error, { name: 'Name cannot content \'@\' and \',\'' });
+			} else {
+				delete error.name;
 			}
 			return state.set('name', value).set('input_error', error);
 			break;
 		case action_constants.USER_CREATE_PASSWORD_CHANGE:
 			if (value.length < 8) {
-				delete error.password;
-			} else {
 				_.assign(error,{ password: 'Password must have at least 8 characters.' });
+			} else {
+				delete error.password;
 			}
 			return state.set('password', value).set('input_error', error);
 			break;
