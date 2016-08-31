@@ -1,4 +1,4 @@
-import { setState } from '../actions/action_creators';
+import { setState } from '../actions/socket/action_app';
 
 class SocketHelper {
 	constructor(socket, store) {

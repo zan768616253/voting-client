@@ -1,6 +1,6 @@
 import cryptoJS from 'crypto-js';
 
-import * as action_constants from './action_constant';
+import * as action_constants from './../action_constant';
 
 export function userCreateValueChange (evt) {
 	return {

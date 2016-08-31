@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import Tagline from '../shared/tagline';
 import { SignUpPanel } from './Signup-Component';
-import * as userActions from '../../actions/action_user.js';
+import * as userActions from '../../actions/user/action_user.js';
 
 const SignUp = React.createClass({
 	mixins: [PureRenderMixin],
