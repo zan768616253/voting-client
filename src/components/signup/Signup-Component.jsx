@@ -6,13 +6,13 @@ export const SignUpPanel = React.createClass({
 	mixins: [PureRenderMixin],
 
 	render () {
-		const { state: { userReducer: { handleUserSigninInput } }, actions: { userAction } } = this.props;
-		const input_error = handleUserSigninInput.get('input_error');
+		const { state: { userReducer: { handleUserSignUpInput } }, actions: { userAction } } = this.props;
+		const input_error = handleUserSignUpInput.get('input_error');
 
 		const handleOnKeyPress = (e) => {
-			const email = handleUserSigninInput.get('email');
-			const password = handleUserSigninInput.get('password');
-			const name = handleUserSigninInput.get('name');
+			const email = handleUserSignUpInput.get('email');
+			const password = handleUserSignUpInput.get('password');
+			const name = handleUserSignUpInput.get('name');
 
 			if ( Object.keys(input_error).length === 0 && e.keyCode === 13 ) {
 				userAction.userCreate.call(undefined, email, password, name);

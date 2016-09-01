@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { bindActionCreators } from 'redux';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import Tagline from '../shared/tagline';
 import { SignUpPanel } from './Signup-Component';
@@ -28,7 +28,7 @@ function mapStateToProps(state) {
 	return {
 		state: {
 			userReducer: {
-				handleUserSigninInput: userReducer.handleUserSigninInput
+				handleUserSignUpInput: userReducer.handleUserSignUpInput
 			}
 		}
 	}

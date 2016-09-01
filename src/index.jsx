@@ -7,11 +7,13 @@ import io from 'socket.io-client';
 
 import App from './components/App.jsx';
 import reducers from './reducers';
-import {setState} from './actions/socket/action_app';
+import { setState } from './actions/socket/action_app';
 import remoteActionMiddleware from './remote_action_middleware';
-import {ResultsContainer} from './components/result';
-import {VotingContainer} from './components/vote';
-import {SignupContainer} from './components/signup';
+
+import { ResultsContainer } from './components/result';
+import { VotingContainer } from './components/vote';
+import { SignupContainer } from './components/signup';
+import { LandingContainer } from './components/landing';
 
 import SocketHelper from './socket';
 
@@ -30,6 +32,7 @@ const routes= <Route path='/' component={App}>
 	<Route path='results' component={ResultsContainer} />
 	<Route path='votes' component={VotingContainer} />
 	<Route path='signup' component={SignupContainer} />
+	<Route path='landing' component={LandingContainer} />
 </Route>;
 
 ReactDOM.render(
