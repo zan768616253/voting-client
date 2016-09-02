@@ -8,7 +8,8 @@ import io from 'socket.io-client';
 import App from './components/App.jsx';
 import reducers from './reducers';
 import { setState } from './actions/socket/action_app';
-import remoteActionMiddleware from './remote_action_middleware';
+import remoteActionMiddleware from './middlewares/remote_action_middleware';
+import { generateSeedMiddleware } from './middlewares/authentication_middleware';
 
 import { ResultsContainer } from './components/result';
 import { VotingContainer } from './components/vote';
@@ -21,7 +22,8 @@ const io_address = `${location.protocol}//${location.hostname}:8090`;
 const socket = io(io_address);
 
 const createStoreWithMiddleware = applyMiddleware(
-	remoteActionMiddleware(socket)
+	remoteActionMiddleware(socket),
+	generateSeedMiddleware
 )(createStore);
 const store = createStoreWithMiddleware(reducers);
 
