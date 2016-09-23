@@ -1,15 +1,16 @@
-import cookie from 'react-cookie';
+import Cookie from "js.cookie";
 
 export const generateSeedMiddleware = store => next => action => {
 	console.log('in generate seed middleware', action);
-	let seed = cookie.load('seed');
+	let seed = Cookie.get("seed");
 	if (!seed) {
-		seed = (Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER)) + ',' +
+		const newSeed = (Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER)) + ',' +
 			(Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER)) + ',' +
 			(Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER)) + ',' +
 			(Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER)) + ',' +
 			(Math.floor(Math.random()*2)?Math.floor(Math.random()*Number.MIN_SAFE_INTEGER):Math.floor(Math.random()*Number.MAX_SAFE_INTEGER));
-		cookie.save('seed', seed, { path: '/' });
+		Cookie.set("seed", newSeed);
+		console.log(Cookie.get("seed"));
 	}
 	return next(action);
 }

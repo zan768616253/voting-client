@@ -37,6 +37,7 @@
     "ejs": "^2.4.2",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
+    "js.cookie": "0.0.4",
     "react": "^15.1.0",
     "react-addons-pure-render-mixin": "^15.1.0",
     "react-cookie": "^0.4.8",
