@@ -11,6 +11,9 @@ class SocketHelper {
 			.on('votees', votees => {
 				this.store.dispatch(setVotees(votees));
 			})
+			.on('login', session => {
+				console.log(session)
+			})
 	}
 }
 
