@@ -10,16 +10,16 @@ class SocketHelper {
 	init() {
 		this.socket
 			.on('VOTEES', votees => {
-				this.store.dispatch(setVotees(votees));
 			})
-			.on('LOGIN', session => {
+			.on('LOGIN', data => {
+				const session = data.session;
 				const key = session.key;
 				console.log('before SocketHelper set cookie mf_auth');
 				console.log('session:');
 				console.log(JSON.stringify(session));
 
 				Cookie.set("mf_auth", key);
-				this.store.dispatch(login(session));
+				this.store.dispatch(login(data));
 			})
 	}
 }
