@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-import { LoginContainer } from './Login-Component';
+import { LoginContainer } from './Login_Component';
 
 export const LandingContainer = React.createClass({
 	mixins: [PureRenderMixin],

@@ -5,12 +5,12 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import io from 'socket.io-client';
 
-import App from './components/App.jsx';
 import reducers from './reducers';
 import { setState } from './actions/socket/action_app';
 import remoteActionMiddleware from './middlewares/remote_action_middleware';
 import { generateSeedMiddleware } from './middlewares/authentication_middleware';
 
+import { App } from './components/App';
 import { ResultsContainer } from './components/result';
 import { VotingContainer } from './components/vote';
 import { SignupContainer } from './components/signup';

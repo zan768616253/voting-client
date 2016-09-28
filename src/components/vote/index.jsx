@@ -4,10 +4,17 @@ import {connect} from 'react-redux';
 
 import Winner from '../winner/index.jsx';
 import Vote from './Vote.jsx';
-import * as actionCreators from '../../actions/socket/action_app';
+
+import { resetRedirect } from '../../actions/app/action_app';
 
 export const Voting = React.createClass({
 	mixins: [PureRenderMixin],
+
+	componentWillMount: function () {
+		console.log('Voting.componentWillMount.this.props')
+		console.log(this.props);
+		this.props.resetRedirect();
+	},
 
 	render: function() {
 		return (
@@ -31,5 +38,5 @@ function mapStateToProps(state) {
 
 export const VotingContainer = connect(
 	mapStateToProps,
-	actionCreators
+	{ resetRedirect }
 )(Voting);

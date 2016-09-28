@@ -68,7 +68,6 @@ const SignInPanel = React.createClass({
 	}
 });
 
-
 function mapStateToProps(state) {
 	const userReducer = state.userReducer;
 	return {

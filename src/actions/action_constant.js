@@ -8,3 +8,11 @@ export const USER_CREATE = 'USER_CREATE';
 export const USER_LOGIN_EMAIL_CHANGE = 'USER_LOGIN_EMAIL_CHANGE';
 export const USER_LOGIN_PASSWORD_CHANGE = 'USER_LOGIN_PASSWORD_CHANGE';
 export const USER_LOGIN = 'USER_LOGIN';
+
+// socket/action_app
+
+export const LOG_IN = 'LOG_IN';
+
+// app/action_app
+
+export const RESET_REDIRECT = 'RESET_REDIRECT';
