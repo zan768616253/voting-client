@@ -36,3 +36,7 @@ export function userLogin (email, password) {
 		}
 	}
 }
+
+export function getFSAuth() {
+
+}

@@ -5,6 +5,10 @@ import Header from './header';
 
 const MainComponent = React.createClass({
 
+	componentDidMount() {
+
+	},
+
 	componentWillReceiveProps(nextProps) {
 		console.log('MainComponent.componentWillReceiveProps');
 		console.log(nextProps);
