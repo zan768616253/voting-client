@@ -13,3 +13,10 @@ export function login(state) {
 		state
 	}
 }
+
+export function setLoginStatus (isLogin) {
+	return {
+		type: action_constants.SET_LOGIN_STATUS,
+		state: { is_login: isLogin }
+	}
+}

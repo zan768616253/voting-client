@@ -1,5 +1,5 @@
 import Cookie from "js.cookie";
-import { setVotees, login } from '../actions/socket/action_app';
+import { setVotees, login, setLoginStatus } from '../actions/socket/action_app';
 
 class SocketHelper {
 	constructor(socket, store) {
@@ -20,6 +20,15 @@ class SocketHelper {
 
 				Cookie.set("mf_auth", key);
 				this.store.dispatch(login(data));
+			})
+			.on('error', err => {
+				console.log('err is received: ' + err);
+
+				switch (err) {
+					case 'Authentication error':
+						this.store.dispatch(setLoginStatus(data));
+						break;
+				}
 			})
 	}
 }

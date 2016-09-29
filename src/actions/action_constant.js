@@ -16,3 +16,4 @@ export const LOG_IN = 'LOG_IN';
 // app/action_app
 
 export const RESET_REDIRECT = 'RESET_REDIRECT';
+export const SET_LOGIN_STATUS = 'SET_LOGIN_STATUS';
